@@ -8,17 +8,23 @@ regions:
     config_repo: git@www-config:mozmeao/www-config
     config_branch: git-sync-operator
     deployment_log_base_url: https://s3-us-west-2.amazonaws.com/mozmeao-deployments/tokyo
+    domain: tokyo.moz.works
   frankfurt:
     name: frankfurt
     config_repo: git@www-config:mozmeao/www-config
     config_branch: git-sync-operator
     deployment_log_base_url: https://s3-us-west-2.amazonaws.com/mozmeao-deployments/frankfurt
+    domain: frankfurt.moz.works
   oregon-b:
     name: oregon-b
-    deis_bin: deis2
+    config_repo: git@www-config:mozmeao/www-config
+    config_branch: git-sync-operator
+    deployment_log_base_url: https://s3-us-west-2.amazonaws.com/mozmeao-deployments/frankfurt
+    domain: oregon-b.moz.works
   iowa-a:
     name: gcp
     cluster_name: iowa-a
     config_repo: git@www-config:mozmeao/www-config
     config_branch: git-sync-operator
     deployment_log_base_url: https://s3-us-west-2.amazonaws.com/mozmeao-deployments/iowa-a
+    domain: gcp.moz.works
