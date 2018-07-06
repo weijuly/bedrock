@@ -5,7 +5,8 @@ set -ex
 # DEMO_NAME, DOMAIN
 # TODO: move more of this script to python
 
-. ${BASH_SOURCE%/*}/../docker/bin/set_git_env_vars.sh # sets DEPLOYMENT_DOCKER_IMAGE
+BEDROCK_BIN=$(pwd)
+. ${BEDROCK_BIN}/../docker/bin/set_git_env_vars.sh # sets DEPLOYMENT_DOCKER_IMAGE
 pushd $(mktemp -d)
 git clone --depth=1 -b ${CONFIG_BRANCH:=master} ${CONFIG_REPO} config_checkout
 cd config_checkout
@@ -21,10 +22,7 @@ if [[ "${NAMESPACE}" == "bedrock-demo" ]]; then
         cp ${CLUSTER_NAME}/bedrock-dev/deploy.yaml ${DEMO_DEPLOY}
         # TODO: more robust template demo name substitution
         sed -e s/2/${DEMO_NAME}/ ${DEMO_SVC_TEMPLATE} > ${DEMO_SVC}
-        CONFIG_CHECKOUT=$(pwd)
-        popd
-        bin/add_svc_ingress.py ${DEMO_SVC} ${DEMO_INGRESS} ${DOMAIN}
-        pushd ${CONFIG_CHECKOUT}
+        ${BEDROCK_BIN}/add_svc_ingress.py ${DEMO_SVC} ${DEMO_INGRESS} ${DOMAIN}
     fi
     sed -i -e "s|image: .*|image: ${DEPLOYMENT_DOCKER_IMAGE}|" ${DEMO_DEPLOY}
     git add ${DEMO_DEPLOY}
