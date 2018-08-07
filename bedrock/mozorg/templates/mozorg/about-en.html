@@ -54,7 +54,7 @@
 
 
 {% block content %}
-<section class="mzp-c-hero">
+<section class="mzp-c-hero t-mission">
   <div class="mzp-l-content">
     <div class="mzp-c-hero-body">
       <h1 class="mzp-c-hero-title">{{ _('Mozilla makes browsers, apps, code and tools that put people before profit.') }}</h1>
@@ -64,11 +64,10 @@
       </div>
 
       <p class="mzp-c-hero-cta">
-        <a class="mzp-c-button mzp-c-button-primary" href="{{ url('mozorg.about.manifesto') }}">{{ _('Read Our Mission') }}</a>
+        <a class="mzp-c-button mzp-c-button-primary" href="{{ url('mozorg.mission') }}">{{ _('Read Our Mission') }}</a>
       </p>
     </div>
   </div>
-
 </section>
 
 <div class="t-shade">
@@ -83,7 +82,7 @@
           image_url='mozorg/about/leaders.jpg',
           include_highres_image=True,
           aspect_ratio='mzp-has-aspect-3-2',
-          link_url='https://www.mozilla.org/en-US/about/leadership/'
+          link_url=url('mozorg.about.leadership')
       )}}
       {{ card_block(
           class='mzp-c-card-medium',
@@ -93,7 +92,7 @@
           image_url='mozorg/about/firefox.jpg',
           include_highres_image=True,
           aspect_ratio='mzp-has-aspect-3-2',
-          link_url='https://www.mozilla.org/en-US/firefox/'
+          link_url=url('firefox')
       )}}
       {{ card_block(
           class='mzp-c-card-medium',
@@ -119,10 +118,10 @@
   </div>
 </div>
 <div class="mzp-l-content">
-  <section class="mzp-c-card-feature mzp-has-aspect-3-2 mzp-l-card-feature-left-half">
+  <section class="mzp-c-card-feature mzp-has-aspect-3-2 mzp-l-card-feature-left-half t-foundation">
     <div class="mzp-c-card-feature-media-wrapper">
       <div class="mzp-c-card-feature-media">
-        {{ high_res_img('mozorg/about/foundation.jpg', {'alt': '', 'class': 'mzp-c-billboard-image', 'width': '488', 'height': '290'}) }}
+        {{ high_res_img('mozorg/about/foundation.jpg', {'alt': '', 'class': 'mzp-c-billboard-image', 'width': '720', 'height': '480'}) }}
       </div>
     </div>
     <div class="mzp-c-card-feature-content">
@@ -141,43 +140,45 @@
       <div class="mzp-c-billboard-content-inner">
         <h2 class="mzp-c-billboard-title">{{ _('The Mozilla Manifesto') }}</h2>
         <p class="mzp-c-billboard-desc">{{ _('The principles we wrote in 1998 still guide us today. And in 2018, we created an addendum to emphasize inclusion, privacy and safety for everyone online.') }}</p>
-        <a class="mzp-c-cta-link" href="{{ url('mozorg.about.manifesto') }}">{{ _('Read the Manifesto.') }}</a>
+        <a class="mzp-c-cta-link" href="{{ url('mozorg.about.manifesto') }}">{{ _('Read The Manifesto') }}</a>
       </div>
     </div>
   </section>
 </div>
-
-<section class="mzp-c-call-out c-call-out-global">
-  <h1 class="mzp-c-call-out-title">{{ _('A Global View') }}</h1>
-  <p class="mzp-c-call-out-desc">{{ _('With offices all over the world, we consider the internet from multiple cultures and contexts.') }}</p>
-</section>
-
 <div class="mzp-l-content">
+  <section class="mzp-c-hero t-global">
+    <div class="mzp-l-content">
+      <div class="mzp-c-hero-body">
+        <h1 class="mzp-c-hero-title">{{ _('A Global View') }}</h1>
+        <div class="mzp-c-hero-desc">
+          {% trans url=url('mozorg.contact.spaces.spaces-landing') %}
+            With <a href="{{ url }}">offices all over the world</a>, we consider the internet from multiple cultures and contexts.
+          {% endtrans %}
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="c-cities">
-    <div class="c-city">
-      <img src="{{ static('img/mozorg/about/city-sf.png') }}" class="c-city-image" alt="" height="205" width="205">
-      <h3 class="c-city-title">{{ _('San Francisco') }}</h3>
+    <a class="c-city c-city-sf" href="{{ url('mozorg.contact.spaces.san-francisco') }}">
+        <h3 class="c-city-title">{{ _('San Francisco') }}</h3>
       {# L10n: The number inside the strong tag will be big, bold, and on its own line. Remove the strong tag if you need to put the number in the middle of the phrase  #}
       <p class="c-city-desc">{{ _('<strong>2000</strong> non-employee guests welcomed each year') }}</p>
-    </div>
-    <div class="c-city">
-      <img src="{{ static('img/mozorg/about/city-berlin.png') }}" class="c-city-image" alt="" height="205" width="205">
+    </a>
+    <a class="c-city c-city-berlin" href="{{ url('mozorg.contact.spaces.berlin') }}">
       <h3 class="c-city-title">{{ _('Berlin') }}</h3>
       {# L10n: The number inside the strong tag will be big, bold, and on its own line. Remove the strong tag if you need to put the number in the middle of the phrase  #}
       <p class="c-city-desc">{{ _('<strong>500</strong> annual attendees to the Berlin speaker series') }} </p>
-    </div>
-    <div class="c-city">
-      <img src="{{ static('img/mozorg/about/city-taipei.png') }}" class="c-city-image" alt="" height="205" width="205">
+    </a>
+    <a class="c-city c-city-taipei" href="{{ url('mozorg.contact.spaces.taipei') }}">
       <h3 class="c-city-title">{{ _('Taipei') }}</h3>
       {# L10n: The number inside the strong tag will be big, bold, and on its own line. Remove the strong tag if you need to put the number in the middle of the phrase  #}
       <p class="c-city-desc">{{ _('<strong>400</strong> collaborative visits with Mozilla employees each year.') }}</p>
-    </div>
-    <div class="c-city">
-      <img src="{{ static('img/mozorg/about/city-toronto.png') }}" class="c-city-image" alt="" height="205" width="205">
+    </a>
+    <a class="c-city c-city-toronto" href="{{ url('mozorg.contact.spaces.toronto') }}">
       <h3 class="c-city-title">{{ _('Toronto') }}</h3>
       {# L10n: The number inside the strong tag will be big, bold, and on its own line. Remove the strong tag if you need to put the number in the middle of the phrase  #}
       <p class="c-city-desc">{{ _('<strong>800</strong> bottles of cold brew coffee consumed yearly.') }}</p>
-    </div>
+    </a>
   </section>
 
   <div class="mzp-l-card-half">
@@ -202,7 +203,8 @@
         link_url=url('mozorg.contribute.index')
     )}}
   </div>
-
+</div>
+<div class="mzp-l-content">
   <aside class="mzp-c-newsletter">
     <div class="mzp-c-newsletter-image">
       {{ high_res_img('home/2018/newsletter-graphic.png', {'alt': ''}) }}
@@ -220,8 +222,9 @@
       )}}
     </div>
   </aside>
-
 </div>
+
+
 {% endblock %}
 
 

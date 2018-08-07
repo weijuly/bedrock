@@ -184,10 +184,10 @@ class TestAboutPage(TestCase):
         req = RequestFactory().get('/')
         req.locale = 'en-US'
         views.about_view(req)
-        render_mock.assert_called_once_with(req, 'mozorg/about/about-en.html', ANY)
+        render_mock.assert_called_once_with(req, 'mozorg/about-en.html')
 
     def test_about_locale_template(self, render_mock):
         req = RequestFactory().get('/')
         req.locale = 'de'
         views.about_view(req)
-        render_mock.assert_called_once_with(req, 'mozorg/about/about.html', ANY)
+        render_mock.assert_called_once_with(req, 'mozorg/about.html')
