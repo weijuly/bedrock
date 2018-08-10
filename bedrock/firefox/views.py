@@ -535,7 +535,7 @@ def download_thanks(request):
     variant = request.GET.get('v', None)
 
     # ensure variant matches pre-defined value
-    if variant not in ['a', 'b']:  # place expected ?v= values in this list
+    if variant not in ['a', 'b', 'c']:  # place expected ?v= values in this list
         variant = None
 
     # `wait-face`, `reggiewatts` variations are currently localized for both en-US and de locales.
@@ -561,8 +561,8 @@ def download_thanks(request):
         else:
             template = 'firefox/new/scene2.html'
     elif locale == 'en-US':
-        if variant == 'b':
-            template = 'firefox/new/email/scene2-b.html'
+        if variant in ['b', 'c']:
+            template = 'firefox/new/email/scene2-{}.html'.format(variant)
         elif experience in ['portland', 'forgood']:
             template = 'firefox/new/portland/scene2.html'
         elif experience in ['portland-fast', 'fast']:
@@ -702,11 +702,3 @@ class FeaturesPrivateBrowsingView(BlogPostsView):
     blog_slugs = 'firefox'
     blog_tags = ['privacy', 'security', 'featured']
     template_name = 'firefox/features/private-browsing.html'
-
-
-class FirefoxHubView(BlogPostsView):
-    blog_posts_limit = 1
-    blog_posts_template_variable = 'articles'
-    blog_slugs = 'firefox'
-    blog_tags = ['home']
-    template_name = 'firefox/home.html'

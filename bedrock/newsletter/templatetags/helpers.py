@@ -53,9 +53,9 @@ def email_newsletter_form(ctx, newsletters='mozilla-and-you', title=None,
         submit_text=submit_text,
         button_class=button_class,
         spinner_color=spinner_color,
-        success=success,
-        email_label=email_label,
         email_placeholder=email_placeholder,
+        email_label=email_label,
+        success=success,
     ))
 
     template_name = 'newsletter/includes/form-protocol.html' if protocol_component else 'newsletter/includes/form.html'

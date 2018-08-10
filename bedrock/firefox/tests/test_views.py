@@ -485,6 +485,12 @@ class TestFirefoxNew(TestCase):
         views.download_thanks(req)
         render_mock.assert_called_once_with(req, 'firefox/new/email/scene2-b.html')
 
+    def test_scene_2_template_variant_c(self, render_mock):
+        req = RequestFactory().get('/firefox/download/thanks/?v=c')
+        req.locale = 'en-US'
+        views.download_thanks(req)
+        render_mock.assert_called_once_with(req, 'firefox/new/email/scene2-c.html')
+
     def test_nonenglish_scene_2_template(self, render_mock):
         req = RequestFactory().get('/firefox/download/thanks/')
         req.locale = 'fr'
