@@ -14,16 +14,15 @@
   <h2>{{ _('Distribution of Firefox with Mozilla Trademarks') }}</h2>
 
   <p>
-    {% trans license=url('foundation.trademarks.policy') %}
+    {% trans license=url('mozorg.mpl.index') %}
       What you can and cannot do with our Firefox software products and code – independent of our trademarks – is governed by a separate document, the <a href="{{ license }}">Mozilla Public License</a>. In turn, the Mozilla Public License does not contain any rules on our trademarks, as is expressly mentioned in its section 2.1. "Grants":
     {% endtrans %}
   </p>
 
-  <p>
-    {% trans %}
-    <i>"Each Contributor hereby grants You a world-wide, royalty-free, non-exclusive license: (a) under intellectual property rights (<u>other than patent or trademark</u>)…"</i>
-    {% endtrans %}
-  </p>
+
+  <blockquote cite="{{ url('mozorg.mpl.2.0.index') }}">
+    <p>{{ _('"Each Contributor hereby grants You a world-wide, royalty-free, non-exclusive license: (a) under intellectual property rights (<em>other than patent or trademark</em>)…"') }}</p>
+  </blockquote>
 
   <p>
     {% trans %}
@@ -36,54 +35,62 @@
   <p>
     {% trans mozorg=url('mozorg.home') %}
     You may distribute unaltered copies of Mozilla Firefox from <a href="{{ mozorg }}">Mozilla.org</a> without express permission from Mozilla as long as you comply with the following rules:
-    <ul>
-      <li>
-        You may not charge for Firefox. That means:
-        <ul>
-          <li>Distribution may not be subject to any fee.</li>
-          <li>Distribution may not be tied to purchasing a product or service.</li>
-        </ul>
-      </li>
-
-      <li>You may not collect personal information in the context of your distribution of Firefox.</li>
-
-      <li>You may not add to, remove, or change any part of Firefox, including the Mozilla trademarks themselves. For example, you may not add any extensions to Firefox.</li>
-
-      <li>You may not modify the installation process of Firefox or use it to install any other themes, plugins, extensions, or software.</li>
-
-      <li>We suggest that if you want to distribute Firefox, you do so by linking to official downloads of Firefox at <a href="{{ mozorg }}">Mozilla.org</a> to help ensure safe, reliable downloads. If you wish to directly distribute copies of Firefox yourself, you must distribute the latest stable version available at <a href="{{ mozorg }}">Mozilla.org</a>.</li>
-
-      <li> When distributing you must distribute the most recent version of Firefox.</li>
-
-      <li>For Android versions of Firefox that you are distributing on a device: (1) the device must have at least 512MB of RAM; and (2) if the device does not have Google Play installed, you must have a means for providing the user with Firefox updates as they are released by Mozilla (see the release calendar https://wiki.mozilla.org/Release_Management/Calendar).</li>
-    </ul>
     {% endtrans %}
   </p>
+  <ul>
+    <li>{{_('You may not charge for Firefox. That means:') }}
+      <ul>
+        <li>{{ _('Distribution may not be subject to any fee.') }}</li>
+        <li>{{ _('Distribution may not be tied to purchasing a product or service.') }}</li>
+      </ul>
+    </li>
+
+    <li>{{ _('You may not collect personal information in the context of your distribution of Firefox.') }}</li>
+
+    <li>{{ _('You may not add to, remove, or change any part of Firefox, including the Mozilla trademarks themselves. For example, you may not add any extensions to Firefox.') }}</li>
+
+    <li>{{ _('You may not modify the installation process of Firefox or use it to install any other themes, plugins, extensions, or software.') }}</li>
+
+    <li>
+      {% trans %}
+      We suggest that if you want to distribute Firefox, you do so by linking to official downloads of Firefox at <a href="{{ mozorg }}">Mozilla.org</a> to help ensure safe, reliable downloads. If you wish to directly distribute copies of Firefox yourself, you must distribute the latest stable version available at <a href="{{ mozorg }}">Mozilla.org</a>.
+      {% endtrans %}
+    </li>
+
+    <li>{{ _('When distributing you must distribute the most recent version of Firefox.') }}</li>
+
+    <li>
+      {% trans %}
+      For Android versions of Firefox that you are distributing on a device: (1) the device must have at least 512MB of RAM; and (2) if the device does not have Google Play installed, you must have a means for providing the user with Firefox updates as they are released by Mozilla (see the <a href="https://wiki.mozilla.org/Release_Management/Calendar">release calendar</a>).
+      {% endtrans %}
+    </li>
+  </ul>
+
 
   <p>
     {% trans %}
-      Mozilla reserves the right to change this Unaltered Firefox Distribution Policy by posting changes on this webpage.
+    Mozilla reserves the right to change this Unaltered Firefox Distribution Policy by posting changes on this webpage.
     {% endtrans %}
   </p>
 
   <h2>{{ _('Modified Versions Require Prior Written Permission') }}</h2>
   <p>
     {% trans %}
-      The open source nature of Firefox allows you to freely download and modify the Firefox source code. However, if you make <i>any</i> changes to Firefox, you may not redistribute that product using <i>any</i> Mozilla trademark without Mozilla’s prior written consent and, typically, a distribution agreement with Mozilla.  For example, you may not distribute a modified form of Firefox and continue to call it Firefox.
-      <ul>
-        <li>Changes requiring Mozilla’s prior written permission include (but are not limited to):
-          <ul>
-            <li>Changing the default home page or adding bookmarks,</li>
-            <li>Adding, modifying, or deleting source files,</li>
-            <li>Adding, modifying, or deleting content from installer files,</li>
-            <li>File location changes,</li>
-            <li>Adding extensions, add-ons or plugins, or</li>
-            <li>Installing themes other than those available in the most recent stable version of Firefox available at Mozilla.org.</li>
-          </ul>
-        </li>
-      </ul>
+    The open source nature of Firefox allows you to freely download and modify the Firefox source code. However, if you make <em>any</em> changes to Firefox, you may not redistribute that product using <em>any</em> Mozilla trademark without Mozilla’s prior written consent and, typically, a distribution agreement with Mozilla.  For example, you may not distribute a modified form of Firefox and continue to call it Firefox.
     {% endtrans %}
   </p>
+  <ul>
+    <li>{{ _('Changes requiring Mozilla’s prior written permission include (but are not limited to):') }}
+      <ul>
+        <li>{{ _('Changing the default home page or adding bookmarks,') }}</li>
+        <li>{{ _('Adding, modifying, or deleting source files,') }}</li>
+        <li>{{ _('Adding, modifying, or deleting content from installer files,') }}</li>
+        <li>{{ _('File location changes,') }}</li>
+        <li>{{ _('Adding extensions, add-ons or plugins, or') }}</li>
+        <li>{{ _('Installing themes other than those available in the most recent stable version of Firefox available at Mozilla.org.') }}</li>
+      </ul>
+    </li>
+  </ul>
 
   <p>
     {% trans permissions="mailto:trademark-permissions@mozilla.com" %}

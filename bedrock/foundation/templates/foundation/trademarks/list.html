@@ -183,16 +183,16 @@ established in any of its products, features, service names, or logos.{% endtran
     </tr>
   </table>
 
-  <h1>{{ _('Pocket Trademark List') }}</h1>
+  <h2>{{ _('Pocket Trademark List') }}</h2>
 
-  <h2>{{ _('Wordmarks') }}</h2>
+  <h3>{{ _('Wordmarks') }}</h3>
 
   <ul id="marks">
     <li>Pocket</li>
     <li>Read It Later</li>
   </ul>
 
-  <h2>{{ _('Logos') }}</h2>
+  <h3>{{ _('Logos') }}</h3>
 
   <img width="300" height="auto" alt="{{ _('Pocket wordmark') }}®" src="{{ static('img/trademarks/pocket.png') }}" />
 
@@ -217,26 +217,36 @@ established in any of its products, features, service names, or logos.{% endtran
     </tr>
   </table>
 
-  <h1>{{ _('Sample Attribution Notices') }}</h1>
+  <h2>{{ _('Sample Attribution Notices') }}</h2>
 
-  <p>{% trans %}For all of the above Mozilla trademarks, sample attribution notices are as follows.{% endtrans %}</p>
+  <p>{{ _('For all of the above Mozilla trademarks, sample attribution notices are as follows.') }}</p>
   <ul>
-    <p>{% trans %}For example, if using the Firefox wordmark:{% endtrans %}</p>
-    <li>“Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries.”</li>
-    <p>{% trans %}If using the Firefox logo:{% endtrans %}</p>
-    <li>“The Firefox logo is a trademark of the Mozilla Foundation in the U.S. and other
-countries.”</li>
-    <p>{% trans %}If using the Mozilla and Firefox wordmarks and the Firefox logo:{% endtrans %}</p>
-    <li>“Mozilla, Firefox and the Firefox logo are trademarks of the Mozilla Foundation in the
-U.S. and other countries.”</li>
+    <li>
+      <p>{{ _('For example, if using the Firefox wordmark:') }}</p>
+      <blockquote><p>{{ _('“Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries.”') }}</p></blockquote>
+    </li>
+    <li>
+      <p>{{ _('If using the Firefox logo:') }}</p>
+      <blockquote><p>{{ _('"The Firefox logo is a trademark of the Mozilla Foundation in the U.S. and other
+  countries.”') }}</p></blockquote>
+    </li>
+    <li>
+      <p>{{ _('If using the Mozilla and Firefox wordmarks and the Firefox logo:') }}</p>
+      <blockquote><p>{{ _('“Mozilla, Firefox and the Firefox logo are trademarks of the Mozilla Foundation in the
+  U.S. and other countries.”') }}</p></blockquote>
+    </li>
   </ul>
 
-  <p>{% trans %}For all of the above Pocket trademarks, sample attribution are as follows.{% endtrans %}</p>
+  <p>{{ _('For all of the above Pocket trademarks, sample attribution are as follows.') }}</p>
   <ul>
-    <p>{% trans %}If using the Pocket wordmark:{% endtrans %}</p>
-    <li>“Pocket is a trademark of Read It Later, Inc. in the U.S. and other countries.”</li>
-    <p>{% trans %}If using the Pocket logo:{% endtrans %}</p>
-    <li>“The Pocket logo is a trademark of Read It Later, Inc. in the U.S. and other countries.”</li>
+    <li>
+      <p>{{ _('If using the Pocket wordmark:') }}</p>
+      <blockquote><p>{{ _('“Pocket is a trademark of Read It Later, Inc. in the U.S. and other countries.”') }}</p></blockquote>
+    </li>
+    <li>
+      <p>{{ _('If using the Pocket logo:') }}</p>
+      <blockquote><p>{{ _('“The Pocket logo is a trademark of Read It Later, Inc. in the U.S. and other countries.”') }}</p></blockquote>
+    </li>
   </ul>
 
 {% endblock article %}
